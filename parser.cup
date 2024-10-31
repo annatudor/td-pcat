@@ -37,8 +37,10 @@ terminal            ASSIGN, PLUS, MINUS, TIMES, DIVIDE,LE, LT, GT, GE, EQ, NEQ ;
 terminal 			INTEGER_TYPE, REAL_TYPE, STRING_TYPE, BOOLEAN_TYPE, TRUE, FALSE;
 terminal			DQUOTE, EXCLAMATION;
 terminal String		IDENTIFIER;
+terminal Integer	INTEGER;
 terminal Integer    NUMBER; // our scanner provides numbers as integers
-terminal String 	BOOLEAN;       
+terminal String 	BOOLEAN; 
+terminal Double 	REAL;      
 
 /* Non terminals */
 non terminal            expr_list;

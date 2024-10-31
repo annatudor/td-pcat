@@ -56,7 +56,8 @@ import java.io.InputStreamReader;
 
 Newline    = \r | \n | \r\n
 Whitespace = [ \t\f] | {Newline}
-Number     = [0-9]+
+Integer     = [0-9]+
+Real = (-?)(0|([1-9][0-9]*))(\.[0-9]+)?
 
 /* comments */
 Comment = {TraditionalComment}
@@ -152,7 +153,8 @@ Boolean = (true) | (false)
   
   /* numeric and boolean expressions */ 
 
-  {Number}       { return symbolFactory.newSymbol("NUMBER", NUMBER, Integer.parseInt(yytext())); }
+  {Integer}       { return symbolFactory.newSymbol("INTEGER", INTEGER, Integer.parseInt(yytext())); }
+  {Real}       { return symbolFactory.newSymbol("REAL", REAL, Double.parseDouble(yytext())); }
   {Boolean}      { return symbolFactory.newSymbol("BOOLEAN", BOOLEAN); }
   
   
